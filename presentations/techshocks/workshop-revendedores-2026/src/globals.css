@@ -2779,7 +2779,7 @@ button { font: inherit; }
   to { opacity: 1; transform: none; }
 }
 
-/* Slide 11 — dark diagnostic laboratory. Activity-first layout with validated-image placeholders. */
+/* Slide 11 — dark diagnostic laboratory. Activity-first layout with validated case images. */
 .diagnostic-lab-mode {
   color: #fff;
   background: #050505;
@@ -2894,7 +2894,7 @@ button { font: inherit; }
   left: 110px;
   right: 150px;
   top: 368px;
-  height: 532px;
+  height: 562px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 64px;
@@ -2965,46 +2965,38 @@ button { font: inherit; }
   font: 700 14px/1 var(--mono);
   letter-spacing: .16em;
 }
-.diagnostic-lab-placeholder {
+.diagnostic-lab-media {
   position: relative;
-  height: 170px;
+  aspect-ratio: 16 / 9;
   margin: 14px 16px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 13px;
+  display: block;
   overflow: hidden;
-  color: rgba(255,255,255,.54);
-  border: 1px dashed rgba(255,255,255,.32);
-  background:
-    linear-gradient(135deg, transparent 0 48.5%, rgba(232,63,0,.12) 48.6% 51.4%, transparent 51.5%),
-    radial-gradient(circle, rgba(255,255,255,.09) 1px, transparent 1.5px),
-    #111;
-  background-size: 100% 100%, 20px 20px, 100% 100%;
+  border: 1px solid rgba(255,255,255,.3);
+  background: #111;
 }
-.diagnostic-lab-placeholder::before,
-.diagnostic-lab-placeholder::after {
+.diagnostic-lab-media::before,
+.diagnostic-lab-media::after {
   content: "";
   position: absolute;
+  z-index: 2;
   width: 38px;
   height: 38px;
   border-color: var(--orange);
   opacity: .82;
 }
-.diagnostic-lab-placeholder::before { left: 12px; top: 12px; border-left: 2px solid; border-top: 2px solid; }
-.diagnostic-lab-placeholder::after { right: 12px; bottom: 12px; border-right: 2px solid; border-bottom: 2px solid; }
-.diagnostic-lab-placeholder svg { color: var(--orange); }
-.diagnostic-lab-placeholder span {
-  text-align: center;
-  font: 600 12px/1.35 var(--mono);
-  letter-spacing: .12em;
+.diagnostic-lab-media::before { left: 12px; top: 12px; border-left: 2px solid; border-top: 2px solid; }
+.diagnostic-lab-media::after { right: 12px; bottom: 12px; border-right: 2px solid; border-bottom: 2px solid; }
+.diagnostic-lab-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .diagnostic-lab-prompts {
-  padding: 10px 24px 16px;
+  padding: 7px 24px 12px;
 }
 .diagnostic-lab-prompts p {
-  min-height: 64px;
+  min-height: 48px;
   margin: 0;
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr);
