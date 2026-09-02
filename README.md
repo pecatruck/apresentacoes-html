@@ -63,6 +63,26 @@ Abstrações e componentes compartilhados devem ser criados somente quando houve
 
 ---
 
+## Publicação no GitHub Pages
+
+O repositório usa um único workflow para todas as apresentações. O pipeline
+procura recursivamente em `presentations/` por projetos que exponham o script
+`pages:build` no `package.json`, executa a validação de cada um e reúne seus
+respectivos diretórios `dist/` em um único artefato do GitHub Pages.
+
+Uma nova apresentação não precisa de um workflow próprio. Para participar da
+publicação, ela deve apenas:
+
+1. ter um `package-lock.json` compatível com `npm ci`;
+2. declarar `pages:build` no `package.json`;
+3. gerar um `dist/index.html` autossuficiente para o seu subdiretório.
+
+O workflow é acionado após mudanças chegarem à `main` ou manualmente por
+`workflow_dispatch`. A exigência de aprovação antes do merge pertence à
+proteção da branch no GitHub.
+
+---
+
 ## Estrutura recomendada de uma apresentação
 
 Uma apresentação pode utilizar diferentes tecnologias, mas deve seguir, sempre que possível, esta organização:

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+.DS_Store
+.impeccable/
+*.tsbuildinfo
+*.log
+.env*
+tmp/
+output/
+design-qa-*.png
+design-qa-*.jpg
