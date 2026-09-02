@@ -1,0 +1,30 @@
+id: techshocks-workshop-revendedores-2026
+brand: techshocks
+title: Workshop TechShocks — Tecnologia de Impacto
+type: workshop
+audience:
+  - revendedores
+  - compradores
+  - balconistas
+  - profissionais-de-oficina
+language: pt-BR
+engine: react-vite-static
+status: active
+year: 2026
+format:
+  aspect_ratio: "16:9"
+  stage: "1920x1080"
+features:
+  speaker_notes: true
+  fullscreen: true
+  keyboard_navigation: true
+  touch_navigation: true
+  overview: true
+  local_text_editing: true
+  hidden_slides: true
+  reduced_motion: true
+deployment:
+  provider: github-pages
+  path: /apresentacoes-html/presentations/techshocks/workshop-revendedores-2026/
+  static_output: dist
+  automatic_publish_branch: main

@@ -1,0 +1,43 @@
+{
+  "name": "@pecatruck/workshop-techshocks-revendedores-2026",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview",
+    "validate:artifact": "node scripts/validate-static-build.mjs",
+    "test": "npm run build && npm run validate:artifact && node --test tests/static-build.test.mjs",
+    "pages:build": "npm run lint && npm test"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/teko": "^5.3.0",
+    "@phosphor-icons/react": "^2.1.10",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "eslint": "10.9.1",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.12.0",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.69.0",
+    "vite": "8.2.2"
+  },
+  "displayName": "Workshop TechShocks — Revendedores 2026"
+}
