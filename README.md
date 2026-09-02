@@ -63,6 +63,41 @@ Abstrações e componentes compartilhados devem ser criados somente quando houve
 
 ---
 
+## Executar localmente
+
+Cada apresentação define seus próprios requisitos e comandos no `README.md`
+local. Antes de iniciar um deck, entre em sua pasta e consulte essa documentação,
+pois o repositório pode reunir projetos feitos com tecnologias diferentes.
+
+Para executar o workshop TechShocks atual a partir da raiz do repositório:
+
+```bash
+cd presentations/techshocks/workshop-revendedores-2026
+npm ci
+npm run dev
+```
+
+Abra o endereço informado pelo servidor de desenvolvimento, normalmente
+<http://localhost:5173/>. Não abra o `index.html` diretamente pelo explorador de
+arquivos ou com uma URL `file://`, pois módulos, assets e recursos do navegador
+devem ser servidos por HTTP.
+
+Para validar o projeto e inspecionar localmente o mesmo build estático usado na
+publicação:
+
+```bash
+npm run lint
+npm test
+npm run preview
+```
+
+Os requisitos, controles e detalhes desse deck estão no
+[README do Workshop TechShocks](presentations/techshocks/workshop-revendedores-2026/README.md).
+Para qualquer nova apresentação, o README localizado em sua própria pasta será
+sempre a referência para instalação, execução e build.
+
+---
+
 ## Publicação no GitHub Pages
 
 O repositório usa um único workflow para todas as apresentações. O pipeline
