@@ -20,14 +20,36 @@ executados no navegador.
 
 ## Desenvolvimento local
 
-Requer Node.js 22.13 ou superior e npm. A partir da raiz do repositório, entre
-na pasta da apresentação e instale exatamente as dependências registradas no
-lockfile:
+### Pré-requisitos
+
+- Node.js 22.13 ou superior;
+- npm, incluído na instalação do Node.js;
+- navegador moderno.
+
+Instale o Node.js pelo [site oficial](https://nodejs.org/) ou, caso já utilize
+o `nvm`, execute `nvm install 22` e `nvm use 22`. Confirme o ambiente com:
+
+```bash
+node --version
+npm --version
+```
+
+Não é necessário instalar Vite ou React globalmente.
+
+### Instalação das dependências
+
+A partir da raiz do repositório, entre na pasta da apresentação e instale
+exatamente as dependências registradas no lockfile:
 
 ```bash
 cd presentations/techshocks/workshop-revendedores-2026
 npm ci
 ```
+
+O comando cria `node_modules/` localmente. Execute-o na primeira instalação e
+sempre que o `package-lock.json` for atualizado.
+
+### Servidor de desenvolvimento
 
 Inicie o servidor de desenvolvimento:
 
