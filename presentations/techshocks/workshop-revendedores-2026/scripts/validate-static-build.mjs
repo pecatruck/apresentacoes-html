@@ -32,7 +32,15 @@ assert.match(html, /pecatruck\.github\.io\/apresentacoes-html\/presentations\/te
 assert.doesNotMatch(textArtifact, /workshop-techshocks\.gabrielbssantos\.chatgpt\.site/);
 assert.doesNotMatch(textArtifact, /(?:["'(]|url\()[/]assets[/]/, "built assets must not use root-absolute /assets URLs");
 
-for (const required of ["favicon.svg", "og.png", "assets/slide-1-cover-background.png", "assets/slide-conclusion-experience-product.mp4"]) {
+for (const required of [
+  "favicon.svg",
+  "og.png",
+  "assets/slide-1-cover-background.png",
+  "assets/slide-11-case-a.jpeg",
+  "assets/slide-11-case-b.jpeg",
+  "assets/slide-11-case-c.jpeg",
+  "assets/slide-conclusion-experience-product.mp4",
+]) {
   assert.equal(relativeFiles.has(required), true, `missing static artifact: ${required}`);
 }
 

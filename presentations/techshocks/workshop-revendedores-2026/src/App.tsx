@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowCounterClockwise, ArrowsDownUp, ArrowsLeftRight, Barcode, CaretRight, ChatCircleDots, CheckCircle, Clock, Coffee, Database, Drop, GasPump, GearSix, Handshake, HeadCircuit, Headset, ImageSquare, InstagramLogo, MagnifyingGlass, MapPin, NotePencil, Nut, Package, Pause, Play, QrCode, Quotes, Receipt, ShieldWarning, Target, Truck, UserCircle, Waveform, WaveSine, Wrench, YoutubeLogo } from "@phosphor-icons/react";
+import { ArrowCounterClockwise, ArrowsDownUp, ArrowsLeftRight, Barcode, CaretRight, ChatCircleDots, CheckCircle, Clock, Coffee, Database, Drop, GasPump, GearSix, Handshake, HeadCircuit, Headset, InstagramLogo, MagnifyingGlass, MapPin, NotePencil, Nut, Package, Pause, Play, QrCode, Quotes, Receipt, ShieldWarning, Target, Truck, UserCircle, Waveform, WaveSine, Wrench, YoutubeLogo } from "@phosphor-icons/react";
 
 type SlideLayout = "default" | "brasil" | "profile" | "road-profiles" | "truck-return" | "road-cost" | "antagonist" | "cab-control" | "diagnostic-signals" | "method-3c" | "diagnostic-lab" | "diagnostic-cost" | "active-break" | "brand-origin" | "trust-system" | "unit-inspection" | "traceability-address" | "customer-support" | "engineering-benefit" | "portfolio-coverage" | "audience-value" | "track-presence" | "hard-questions" | "workshop-takeaways" | "techshocks-experience" | "workshop-film" | "closing-cover";
 
@@ -21,6 +21,24 @@ type Slide = {
   transition: string;
   layout?: SlideLayout;
 };
+
+const diagnosticLabCases = [
+  {
+    letter: "A",
+    image: "./assets/slide-11-case-a.jpeg",
+    alt: "Caminhão Ford Cargo e comparação entre conjuntos de mola e amortecedor de cabine novo e usado.",
+  },
+  {
+    letter: "B",
+    image: "./assets/slide-11-case-b.jpeg",
+    alt: "Molas, amortecedores e componentes de montagem de cabine organizados para inspeção.",
+  },
+  {
+    letter: "C",
+    image: "./assets/slide-11-case-c.jpeg",
+    alt: "Conjunto de suspensão da cabine instalado no caminhão, com detalhe ampliado da fixação superior.",
+  },
+] as const;
 
 const firstSlides: Slide[] = [
   {
@@ -1161,16 +1179,15 @@ const workshopSlidesBase: Slide[] = [
         </section>
 
         <section className="diagnostic-lab-cases" aria-label="Casos do laboratório">
-          {["A", "B", "C"].map((caseLetter, caseIndex) => (
+          {diagnosticLabCases.map(({ letter: caseLetter, image, alt }, caseIndex) => (
             <article className="diagnostic-lab-case" key={caseLetter} style={{ "--lab-case-index": caseIndex } as React.CSSProperties}>
               <header>
                 <h3 data-edit-key={`lab-case-${caseLetter}-title`}>CASO {caseLetter}</h3>
                 <span aria-hidden="true">{"/////"}</span>
               </header>
-              <div className="diagnostic-lab-placeholder" role="img" aria-label={`Placeholder da imagem do caso ${caseLetter}`}>
-                <ImageSquare aria-hidden="true" size={58} weight="thin" />
-                <span>IMAGEM DO CASO<br />EM VALIDAÇÃO</span>
-              </div>
+              <figure className="diagnostic-lab-media">
+                <img src={image} alt={alt} />
+              </figure>
               <div className="diagnostic-lab-prompts">
                 {[
                   { label: "O que observamos?", Icon: MagnifyingGlass },

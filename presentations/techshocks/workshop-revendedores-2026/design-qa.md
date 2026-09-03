@@ -96,3 +96,17 @@ aprovação; os assets finais permanecem em `public/assets/`.
 - O scanner visual sinalizou bordas técnicas laterais e chanfros existentes
   como possíveis “side-tabs”. Foram classificados como elementos intencionais
   do sistema TechShocks e preservados, pois a migração não redesenha o deck.
+
+# Slide 11 — casos de diagnóstico — 2026-09-02
+
+- Os placeholders dos casos A, B e C foram substituídos pelas fotografias finais
+  `slide-11-case-a.jpeg`, `slide-11-case-b.jpeg` e `slide-11-case-c.jpeg`.
+- A área visual dos cards passou a preservar a proporção 16:9 sem corte ou
+  distorção; os cards foram ampliados e as linhas de perguntas compactadas sem
+  alterar conteúdo, hierarquia ou sequência da atividade.
+- Marcadores técnicos, chanfros, animações e faixa de fechamento foram
+  preservados. Os três assets passaram a integrar a validação obrigatória do
+  artefato estático.
+- Revisão renderizada concluída em 1920 × 1080, 1280 × 720 e 390 × 844: fotos
+  completas, perguntas legíveis, faixa final sem colisão e palco 16:9 preservado
+  com letterbox no telefone. O console terminou sem erros ou avisos.
