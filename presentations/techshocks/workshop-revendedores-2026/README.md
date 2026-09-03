@@ -18,16 +18,52 @@ Worker, API, renderização no servidor, banco de dados ou dependência do GPT
 Sites. Navegação, animações, notas, edição local, vídeos e fullscreen são
 executados no navegador.
 
-## Desenvolvimento
+## Desenvolvimento local
 
-Requer Node.js 22.13 ou superior e npm.
+### Pré-requisitos
+
+- Node.js 22.13 ou superior;
+- npm, incluído na instalação do Node.js;
+- navegador moderno.
+
+Instale o Node.js pelo [site oficial](https://nodejs.org/) ou, caso já utilize
+o `nvm`, execute `nvm install 22` e `nvm use 22`. Confirme o ambiente com:
 
 ```bash
+node --version
+npm --version
+```
+
+Não é necessário instalar Vite ou React globalmente.
+
+### Instalação das dependências
+
+A partir da raiz do repositório, entre na pasta da apresentação e instale
+exatamente as dependências registradas no lockfile:
+
+```bash
+cd presentations/techshocks/workshop-revendedores-2026
 npm ci
+```
+
+O comando cria `node_modules/` localmente. Execute-o na primeira instalação e
+sempre que o `package-lock.json` for atualizado.
+
+### Servidor de desenvolvimento
+
+Inicie o servidor de desenvolvimento:
+
+```bash
 npm run dev
 ```
 
-Abra o endereço informado pelo Vite.
+Abra o endereço informado pelo Vite, normalmente <http://localhost:5173/>. Se
+essa porta já estiver em uso, o Vite selecionará outra e mostrará a URL correta
+no terminal.
+
+Não abra o `index.html` diretamente com uma URL `file://`. Durante o
+desenvolvimento, a apresentação precisa ser servida pelo Vite para carregar os
+módulos e assets corretamente.
 
 ## Validação e build
 
@@ -37,11 +73,17 @@ npm test
 ```
 
 `npm test` executa a checagem de tipos, gera `dist/`, valida o artefato estático
-e confirma o conteúdo essencial da apresentação. Para inspecionar o build:
+e confirma o conteúdo essencial da apresentação. Para inspecionar localmente o
+mesmo build de produção que será enviado ao GitHub Pages:
 
 ```bash
 npm run preview
 ```
+
+Abra o endereço exibido pelo Vite, normalmente <http://localhost:4173/>. O
+comando `npm run dev` é destinado ao desenvolvimento com atualização rápida;
+`npm run preview` serve o conteúdo já compilado de `dist/`; e o GitHub Pages
+publica esse mesmo conteúdo estático após o merge na `main`.
 
 ## Estrutura
 
