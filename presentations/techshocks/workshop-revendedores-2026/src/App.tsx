@@ -1606,7 +1606,7 @@ const workshopSlidesBase: Slide[] = [
         <section className="customer-support-metrics" aria-label="Indicadores de atendimento e garantia">
           {[
             ["VOLUME DE PEÇAS", "38.298", Package],
-            ["PERÍODO", "32 MESES", Clock],
+            ["PERÍODO", "24 MESES", Clock],
             ["GARANTIAS EFETIVAS", "0,001%", ShieldWarning],
           ].map(([label, value, Icon], metricIndex) => {
             const MetricIcon = Icon as React.ComponentType<{ size?: number; weight?: "thin" | "regular" }>;
@@ -1627,7 +1627,7 @@ const workshopSlidesBase: Slide[] = [
       </div>
     ),
     source: undefined,
-    guide: "Os indicadores apresentados cobrem 38.298 peças em 32 meses, com 0,001% de garantias efetivas. O dado sustenta o mecanismo: mais de 90% dos chamados são resolvidos por orientação técnica — aplicação, instalação ou conjunto — e não por troca de peça. As avaliações públicas podem ser verificadas pelo próprio público.",
+    guide: "Os indicadores apresentados cobrem 38.298 peças em 24 meses, com 0,001% de garantias efetivas. O dado sustenta o mecanismo: mais de 90% dos chamados são resolvidos por orientação técnica — aplicação, instalação ou conjunto — e não por troca de peça. As avaliações públicas podem ser verificadas pelo próprio público.",
     interaction: "Convide a sala a consultar avaliações públicas no celular e conte um caso real resolvido por orientação, sem identificar o cliente.",
     transition: "Isso só é possível porque a peça foi construída para durar. Vamos falar do que ela tem dentro.",
   }),

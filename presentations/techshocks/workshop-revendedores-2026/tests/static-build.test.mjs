@@ -25,6 +25,8 @@ test("contains the production presentation in a static artifact", async () => {
   assert.match(artifact, /DE CABINE/);
   assert.match(artifact, /Filme TechShocks/);
   assert.match(artifact, /CONTRACAPA/);
+  assert.match(artifact, /24 MESES/);
+  assert.doesNotMatch(artifact, /32 MESES/);
   assert.match(artifact, /ZIESpdanhsQ/);
   assert.match(artifact, /slide-11-case-a\.jpeg/);
   assert.match(artifact, /slide-11-case-b\.jpeg/);
